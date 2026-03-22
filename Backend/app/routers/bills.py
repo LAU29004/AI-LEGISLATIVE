@@ -41,6 +41,7 @@ class BillOut(BaseModel):
     title:             str
     year:              Optional[str]
     status:            Optional[str]
+    ministry_name:     Optional[str]   # ✅ ADDED
     pdf_url:           Optional[str]
     compressed:        bool
     original_tokens:   int
@@ -116,6 +117,7 @@ def get_bill(bill_number: str, db: Session = Depends(get_db)):
         title             = bill.title,
         year              = bill.year,
         status            = bill.status,
+        ministry_name     = bill.ministry_name,   # ✅ ADDED
         pdf_url           = bill.pdf_url,
         compressed        = bill.compressed,
         original_tokens   = bill.original_tokens,

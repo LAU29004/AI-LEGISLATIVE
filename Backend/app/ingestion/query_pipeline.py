@@ -57,7 +57,7 @@ COD_ROUNDS            = 3   # chain-of-density iteration rounds
 # SINGLETONS
 # ─────────────────────────────────────────────────────────────────────────────
 
-HF_TOKEN = os.environ.get("HF_TOKEN")
+HF_TOKEN = os.getenv("HF_TOKEN")
 
 
 cheap_client  = InferenceClient(model=CHEAP_MODEL,  token=HF_TOKEN, provider="auto")

@@ -203,6 +203,7 @@ def _persist_to_postgres(
     title:             str,
     year:              str,
     status:            str,
+    ministry_name:     str,        # ✅ ADDED
     pdf_url:           str,
     local_pdf_path:    str,
     original_tokens:   int,
@@ -218,6 +219,7 @@ def _persist_to_postgres(
             title             = title,
             year              = year,
             status            = status,
+            ministry_name     = ministry_name,     # ✅ ADDED
             pdf_url           = pdf_url,
             local_pdf_path    = local_pdf_path,
             compressed        = True,
@@ -233,6 +235,7 @@ def _persist_to_postgres(
                 "title":             stmt.excluded.title,
                 "year":              stmt.excluded.year,
                 "status":            stmt.excluded.status,
+                "ministry_name":     stmt.excluded.ministry_name,   # ✅ ADDED
                 "pdf_url":           stmt.excluded.pdf_url,
                 "local_pdf_path":    stmt.excluded.local_pdf_path,
                 "compressed":        True,
@@ -299,10 +302,11 @@ def _fetch_bills_page(page: int) -> list[dict]:
             if not bill_number:
                 continue
             bills.append({
-                "bill_number": bill_number,
-                "title":       item.get("billName", "").strip(),
-                "status":      item.get("status", ""),
-                "pdf_url":     item.get("billIntroducedFile", ""),
+                "bill_number":   bill_number,
+                "title":         item.get("billName", "").strip(),
+                "status":        item.get("status", ""),
+                "pdf_url":       item.get("billIntroducedFile", ""),
+                "ministry_name": item.get("ministryName", "").strip(),  # ✅ ADDED
             })
         return bills
     except Exception as exc:
@@ -434,6 +438,7 @@ def poll_and_ingest() -> None:
                     title             = title,
                     year              = year,
                     status            = bill["status"],
+                    ministry_name     = bill["ministry_name"],   # ✅ ADDED
                     pdf_url           = bill["pdf_url"],
                     local_pdf_path    = local_path,
                     original_tokens   = orig,

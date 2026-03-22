@@ -52,7 +52,7 @@ router = APIRouter()
 CHROMA_DIR        = os.getenv("CHROMA_DIR",        "chroma_db")
 CHROMA_COLLECTION = os.getenv("CHROMA_COLLECTION",  "bill_sections")
 GEMINI_MODEL      = os.getenv("GEMINI_MODEL",       "gemini-2.0-flash")
-HF_TOKEN          = os.getenv("HF_TOKEN",           "")
+HF_TOKEN          = os.getenv("HF_TOKEN")
 
 CHEAP_MODEL  = "meta-llama/Llama-3.1-8B-Instruct"
 STRONG_MODEL = "meta-llama/Llama-3.3-70B-Instruct"

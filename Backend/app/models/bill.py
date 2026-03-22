@@ -11,6 +11,7 @@ class Bill(Base):
     title             = Column(Text)
     year              = Column(String)
     status            = Column(String)
+    ministry_name     = Column(String, nullable=True)   # ✅ ADD THIS LINE
     pdf_url           = Column(Text)
     local_pdf_path    = Column(Text)
     compressed        = Column(Boolean, default=False)
