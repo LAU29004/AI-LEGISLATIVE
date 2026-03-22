@@ -477,50 +477,7 @@ export default function LoginScreen({ onLoginSuccess }: LoginScreenProps) {
                 <ActivityIndicator size="small" color="#4285F4" />
               ) : (
                 <>
-                  {/* Google coloured G */}
-                  <View style={ls.googleIconWrap}>
-                    <Text style={ls.googleG}>G</Text>
-                  </View>
-                  <Text style={ls.googleBtnText}>Continue with Google</Text>
-                </>
-              )}
-            </TouchableOpacity>
-
-            {/* ── Divider ── */}
-            <View style={ls.dividerRow}>
-              <View style={[ls.dividerLine, { backgroundColor: T.border }]} />
-              <Text style={[ls.dividerText, { color: T.textMuted }]}>or</Text>
-              <View style={[ls.dividerLine, { backgroundColor: T.border }]} />
-            </View>
-
-            {/* ── Email button ── */}
-            <TouchableOpacity
-              onPress={handleEmailLogin}
-              activeOpacity={0.85}
-              disabled={loading || loadingEmail}
-              style={[
-                ls.emailBtn,
-                {
-                  backgroundColor: T.isDark
-                    ? "rgba(139,92,246,0.12)"
-                    : "rgba(109,40,217,0.07)",
-                  borderColor: T.borderStrong,
-                  opacity: loading || loadingEmail ? 0.7 : 1,
-                },
-              ]}
-            >
-              {loadingEmail ? (
-                <ActivityIndicator size="small" color={Accent.violet400} />
-              ) : (
-                <>
-                  <Ionicons
-                    name="mail-outline"
-                    size={18}
-                    color={Accent.violet400}
-                  />
-                  <Text style={[ls.emailBtnText, { color: Accent.violet400 }]}>
-                    Continue with Email
-                  </Text>
+                  <Text style={ls.googleBtnText}>Continue To Use</Text>
                 </>
               )}
             </TouchableOpacity>

@@ -595,7 +595,7 @@ const HistorySidebar = ({
         {sessions.length > 0 && (
           <TouchableOpacity
             onPress={onClearAll}
-            style={[hs.clearBtn, { borderTopColor: T.border }]}
+            style={[hs.clearBtn, { borderTopColor: T.border , marginBottom : 100 }]}
             activeOpacity={0.75}
           >
             <Ionicons name="trash-outline" size={15} color="#ef4444" />
