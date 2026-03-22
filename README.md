@@ -597,12 +597,6 @@ We welcome contributions from developers, legal experts, and civic tech enthusia
 
 ---
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
-
 <p align="center">
   <b>Digital Sansad</b> — Because every citizen deserves to understand the laws that govern them.<br/>
   Built with ❤️ for India 🇮🇳
