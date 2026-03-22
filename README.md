@@ -462,6 +462,18 @@ AI-LEGISLATIVE/
 
 ---
 
+## To Run Frontend 
+
+$env:REACT_NATIVE_PACKAGER_HOSTNAME="172.19.221.120"
+
+---
+
+## To Run Backend
+
+uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+
+---
+
 ## API Reference
 
 Full interactive docs at `http://localhost:8000/docs` (Swagger UI) after starting the server.
